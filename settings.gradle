@@ -1,2 +1,2 @@
-rootProject.name='AndroidProjectNewTeam'
 include ':app'
+rootProject.name='Movie'
