@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/viewBg"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.movie.DetailActivity"
+    tools:showIn="@layout/activity_detail">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="20dp"
+            android:background="#ffffff">
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/movieTitle"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:paddingEnd="10dp"
+                android:textStyle="bold"
+                android:textSize="22sp" />
+            <TextView
+                android:id="@+id/plotsynopsis_ganre"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/plot"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="#0B83F7"
+                android:textColor="#ffffff"
+                android:text="Экшен"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/userrating"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rating"
+
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="5dp"
+                android:paddingEnd="10dp"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/date_ly_on">
+
+                <TextView
+                    android:id="@+id/date_movie_info"
+                    android:layout_width="150dp"
+                    android:layout_height="30sp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="0dp"
+                    android:text="март 28, 2020"
+                    android:textColor="#000000"
+                    android:textSize="14dp"
+                    />
+                <ImageView
+                    android:layout_width="19dp"
+                    android:layout_height="19dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginLeft="140dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/ic_message"/>
+
+                <TextView
+                    android:id="@+id/comment_movie_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="21dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="0dp"
+                    android:text="1"
+                    android:textColor="#000000"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/plotsynopsis"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/plot"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:text="@string/rating"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/releasedate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/movieTitle"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/rating"
+                android:textSize="15dp"
+                android:textColor="#000000"/>
+            <TextView
+                android:id="@+id/commit_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/movieTitle"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="center"
+                android:text="Читать комментарий"
+                android:textSize="15dp"
+                android:textColor="#000000"/>
+
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
