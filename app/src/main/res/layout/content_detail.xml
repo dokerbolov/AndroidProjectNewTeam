@@ -38,16 +38,16 @@
                 android:textStyle="bold"
                 android:textSize="22sp" />
             <TextView
-                android:id="@+id/plotsynopsis_ganre"
-                android:layout_width="120dp"
+                android:id="@+id/genre"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/plot"
                 android:layout_marginLeft="20dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="5dp"
+                android:text="Экшен"
                 android:background="#0B83F7"
                 android:textColor="#ffffff"
-                android:text="Экшен"
                 android:textSize="15dp" />
 
             <TextView
@@ -55,7 +55,6 @@
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rating"
-
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="5dp"
@@ -71,29 +70,30 @@
 
                 <TextView
                     android:id="@+id/date_movie_info"
-                    android:layout_width="150dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="30sp"
                     android:layout_marginLeft="3dp"
                     android:layout_marginTop="0dp"
                     android:text="март 28, 2020"
                     android:textColor="#000000"
-                    android:textSize="14dp"
-                    />
+                    android:textSize="14dp" />
+
                 <ImageView
                     android:layout_width="19dp"
                     android:layout_height="19dp"
-                    android:layout_marginRight="2dp"
                     android:layout_marginLeft="140dp"
                     android:layout_marginTop="0dp"
-                    android:background="@drawable/ic_message"/>
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/ic_message"
+                    android:contentDescription="TODO" />
 
                 <TextView
                     android:id="@+id/comment_movie_info"
                     android:layout_width="wrap_content"
                     android:layout_height="21dp"
                     android:layout_marginLeft="0dp"
-                    android:layout_marginRight="5dp"
                     android:layout_marginTop="0dp"
+                    android:layout_marginRight="0dp"
                     android:text="1"
                     android:textColor="#000000"
                     android:textSize="14dp" />

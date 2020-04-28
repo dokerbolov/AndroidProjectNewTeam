@@ -11,10 +11,9 @@ import com.example.movie.myFragments.ProfileFragment
 import com.example.movie.pager.LockableViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-
 class MainActivity : AppCompatActivity() {
 
-    lateinit var bottomNavigationView: BottomNavigationView
+    private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var pager: LockableViewPager
     private lateinit var pagerAdapter: PagerAdapter
     private var f1: Fragment = MainFragment()
@@ -37,22 +36,27 @@ class MainActivity : AppCompatActivity() {
             when (menuItem.itemId) {
                 R.id.home -> {
                     pager.setCurrentItem(0, false)
+                    supportActionBar!!.title = "Кино ТВ - Онлайн Фильмы"
                 }
                 R.id.like_posts -> {
                     pager.setCurrentItem(1, false)
+                    supportActionBar!!.title = "Закладки"
+
                 }
                 R.id.about -> {
                     pager.setCurrentItem(2, false)
+                    supportActionBar!!.title = "Профиль"
+
                 }
             }
             false
         }
     }
 
-    fun bindView() {
+    private fun bindView() {
         pager = findViewById(R.id.pager)
         bottomNavigationView = findViewById(R.id.bottom_navigation)
-    }
 
+    }
 
 }

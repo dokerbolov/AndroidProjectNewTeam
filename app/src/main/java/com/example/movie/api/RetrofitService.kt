@@ -1,6 +1,6 @@
 package com.example.movie.api
 
-import com.example.movie.model.Movie
+import com.example.movie.model.Genre
 import com.example.movie.model.MovieResponse
 import com.google.gson.JsonObject
 import retrofit2.Call
@@ -27,42 +27,21 @@ interface PostApi {
     @GET("movie/popular")
     fun getPopularMovieList(@Query("api_key") apiKey: String): Call<MovieResponse>
 
-    @GET("movie/popular")
-    suspend fun getPopularMovieListCoroutine(@Query("api_key") apiKey: String): Response<MovieResponse>
-
-
     @GET("authentication/token/new")
     fun getRequestToken(@Query("api_key") apiKey: String): Call<RequestToken>
-
-    @GET("authentication/token/new")
-    suspend fun getRequestTokenCorountine(@Query("api_key")apiKey: String):Response<RequestToken>
 
     @POST("authentication/token/validate_with_login")
     fun login(@Query("api_key") apiKey: String, @Body body: JsonObject): Call<JsonObject>
 
-    @POST("authentication/token/validate_with_login")
-    suspend fun loginCoroutune(@Query("api_key") apiKey: String,@Body body: JsonObject): Response<JsonObject>
-
-
     @POST("authentication/session/new")
     fun getSession(@Query("api_key") apiKey: String, @Body body: JsonObject): Call<JsonObject>
 
-    @POST("authentication/session/new")
-    suspend fun getSessionCoroutine(@Query("api_key") apiKey: String,@Body body: JsonObject):Response<JsonObject>
-
-    @GET("account")
-    fun getAccount(@Query("api_key") apiKey: String, @Query("session_id") sessionId: String): Call<JsonObject>
-
-    @GET("account")
-    suspend fun getAccountCoroutine(@Query("api_key")apiKey: String,@Query("session_id") sessionId: String): Response<JsonObject>
-
-    @POST("account/{account_id}/favorite")
-    fun rate(
-        @Path("account_id") accountId: Int?,
+    @GET("movie/{movie_id}/account_states")
+    suspend fun hasLikeCoroutine(
+        @Path("movie_id") movieId: Int?,
         @Query("api_key") apiKey: String,
-        @Query("session_id") sessionId: String?,
-        @Body body: JsonObject
-    ): Call<JsonObject>
+        @Query("session_id") sessionId: String?
+    ): Response<JsonObject>
 
     @POST("account/{account_id}/favorite")
     suspend fun rateCoroutine(
@@ -70,10 +49,30 @@ interface PostApi {
         @Query("api_key") apiKey: String,
         @Query("session_id") sessionId: String?,
         @Body body: JsonObject
-    ):Response<JsonObject>
+    ): Response<JsonObject>
+
+    @GET("movie/popular")
+    suspend fun getPopularMovieListCoroutine(@Query("api_key") apiKey: String): Response<MovieResponse>
+
+    @GET("authentication/token/new")
+    suspend fun getRequestTokenCorountine(@Query("api_key") apiKey: String): Response<RequestToken>
+
+
+    @POST("authentication/token/validate_with_login")
+    suspend fun loginCoroutune(@Query("api_key") apiKey: String, @Body body: JsonObject): Response<JsonObject>
+
+    @POST("authentication/session/new")
+    suspend fun getSessionCoroutine(@Query("api_key") apiKey: String, @Body body: JsonObject): Response<JsonObject>
+
+    @GET("account")
+    suspend fun getAccountCoroutine(@Query("api_key") apiKey: String, @Query("session_id") sessionId: String): Response<JsonObject>
+
+
+    @GET("account")
+    fun getAccount(@Query("api_key") apiKey: String, @Query("session_id") sessionId: String): Call<JsonObject>
 
     @POST("account/{account_id}/favorite")
-    fun unrate(
+    fun rate(
         @Path("account_id") accountId: Int?,
         @Query("api_key") apiKey: String,
         @Query("session_id") sessionId: String?,
@@ -86,19 +85,13 @@ interface PostApi {
         @Query("api_key") apiKey: String,
         @Query("session_id") sessionId: String?
     ): Call<MovieResponse>
+
     @GET("account/{account_id}/favorite/movies")
     suspend fun getFavouriteMoviesCoroutine(
         @Path("account_id") accountId: Int?,
         @Query("api_key") apiKey: String,
         @Query("session_id") sessionId: String?
     ): Response<MovieResponse>
-
-    @GET("account/{account_id}/favorite/movies")
-    suspend fun getFavoriteMoviesCoroutine(
-        @Path("account_id") accountId: Int?,
-        @Query("api_key") apiKey: String,
-        @Query("session_id") sessionId: String?
-    ):Response<MovieResponse>
 
     @GET("movie/{movie_id}/account_states")
     fun hasLike(
@@ -107,19 +100,12 @@ interface PostApi {
         @Query("session_id") sessionId: String?
     ): Call<JsonObject>
 
-    @GET("movie/{movie_id}/account_states")
-    suspend fun hasLikeCoroutine(
-        @Path("movie_id") movieId: Int?,
-        @Query("api_key") apiKey: String,
-        @Query("session_id") sessionId: String?
-        ):Response<JsonObject>
-
     @DELETE("authentication/session")
     fun deleteSession(@Query("api_key") apiKey: String, @Body body: JsonObject): Call<JsonObject>
 
     @DELETE("authentication/session")
-    suspend fun  deleteSessionCoroutine(@Query("api_key") apiKey: String, @Body body: JsonObject): Response<JsonObject>
+    suspend fun deleteSessionCoroutine(@Query("api_key") apiKey: String, @Body body: JsonObject): Response<JsonObject>
 
-
-
+    @GET("genre/movie/list")
+    fun getGenres(@Query("api_key") apiKey: String): Call<List<Genre>>
 }

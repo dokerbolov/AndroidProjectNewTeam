@@ -9,12 +9,7 @@ data class FavResponse
     @SerializedName("favorite")
     val favorite: Boolean,
     @SerializedName("rated")
-    val rated: Object,
+    val rated: Any,
     @SerializedName("watchlist")
     val watchlist: Boolean
-)
-
-data class RateClass(
-    @SerializedName("value")
-    val value: Int
 )
