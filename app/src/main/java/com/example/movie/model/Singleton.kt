@@ -1,9 +1,8 @@
 package com.example.movie.model
 
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
 
-class Singleton  (
+class Singleton(
     @SerializedName("username")
     var username: String,
     @SerializedName("session_id")
@@ -11,7 +10,6 @@ class Singleton  (
     @SerializedName("account_id")
     var accountId: Int
 ) {
-
 
     companion object Factory {
         @Volatile

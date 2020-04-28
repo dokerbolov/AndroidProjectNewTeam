@@ -19,8 +19,6 @@ data class MyAccount (
     @SerializedName("username")
     val username: String
 ):Serializable
-{
-  }
 
 data class Avatar(
     @SerializedName("gravatar")

@@ -8,7 +8,7 @@ import androidx.viewpager.widget.ViewPager
 class LockableViewPager  : ViewPager {
     private var swipable = false
 
-    constructor(context: Context?) : super(context!!) {}
+    constructor(context: Context?) : super(context!!)
     constructor(context: Context?, attrs: AttributeSet?) : super(
         context!!,
         attrs

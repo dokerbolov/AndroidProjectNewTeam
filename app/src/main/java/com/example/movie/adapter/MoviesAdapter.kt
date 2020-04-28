@@ -1,6 +1,5 @@
 package com.example.movie.adapter
 
-
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -13,7 +12,6 @@ import com.bumptech.glide.Glide
 import com.example.movie.DetailActivity
 import com.example.movie.R
 import com.example.movie.model.Movie
-import kotlinx.android.synthetic.main.movie_card.view.*
 
 class MoviesAdapter(
     var context: Context,
@@ -31,14 +29,12 @@ class MoviesAdapter(
         viewHolder.bind(moviesList?.get(i))
     }
 
-
     inner class MovieViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
         fun bind(movie: Movie?) {
             val title = view.findViewById<TextView>(R.id.title)
             val description = view.findViewById<TextView>(R.id.description)
             val thumbnail = view.findViewById<ImageView>(R.id.thumbnail)
-
 
             title.text = movie?.original_title
             val vote = movie?.overview
@@ -52,7 +48,8 @@ class MoviesAdapter(
                 val intent = Intent(context, DetailActivity::class.java)
                 intent.putExtra("movie_id", movie?.id)
                 intent.putExtra("original_title", movie?.original_title)
-                intent.putExtra("poster_path", movie?.poster_path)
+                intent.putExtra("movie", movie)
+                intent.putExtra("poster_path", movie?.getPosterPath())
                 intent.putExtra("overview", movie?.overview)
                 intent.putExtra("vote_average", (movie?.vote_average).toString())
                 intent.putExtra("release_date", movie?.release_date)
@@ -60,7 +57,5 @@ class MoviesAdapter(
             }
         }
     }
-
-
 }
 
