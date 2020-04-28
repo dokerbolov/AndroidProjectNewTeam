@@ -6,13 +6,12 @@ import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
 
-
 class RegistrationActivity : AppCompatActivity() {
-    lateinit var email: EditText
-    lateinit var password: EditText
+    private lateinit var email: EditText
+    private lateinit var password: EditText
     lateinit var name: EditText
-    lateinit var login: Button
-    lateinit var register: Button
+    private lateinit var login: Button
+    private lateinit var register: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,14 +23,8 @@ class RegistrationActivity : AppCompatActivity() {
         register = findViewById(R.id.register)
         name = findViewById(R.id.name)
 
-        register.setOnClickListener {
-
-        }
-
         login.setOnClickListener {
-
             onBackPressed()
-
         }
     }
 }
