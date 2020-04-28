@@ -172,6 +172,7 @@ class DetailActivity : AppCompatActivity(), CoroutineScope by MainScope() {
                 RetrofitService.getPostApi()
                     .rateCoroutine(accountId, BuildConfig.THE_MOVIE_DB_API_TOKEN, sessionId, body)
             } catch (e: Exception) {
+
             }
             if (favourite) {
                 movie?.liked = 11
@@ -214,7 +215,6 @@ class DetailActivity : AppCompatActivity(), CoroutineScope by MainScope() {
                     collapse.title = " "
                     isShow = false
                 }
-
             }
         })
     }

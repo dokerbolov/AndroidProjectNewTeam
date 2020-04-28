@@ -111,7 +111,7 @@ class LoginActivity : AppCompatActivity(), CoroutineScope by MainScope() {
                             } else {
                                 Toast.makeText(
                                     this@LoginActivity,
-                                    "Fail",
+                                    "Failed",
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }
@@ -120,7 +120,7 @@ class LoginActivity : AppCompatActivity(), CoroutineScope by MainScope() {
                 }
             }
         } else {
-            Toast.makeText(this@LoginActivity, "Empty email or password", Toast.LENGTH_LONG)
+            Toast.makeText(this@LoginActivity, "Type email and password", Toast.LENGTH_LONG)
                 .show()
         }
     }
@@ -159,7 +159,7 @@ class LoginActivity : AppCompatActivity(), CoroutineScope by MainScope() {
 
             }
         } catch (e: Exception) {
-            Toast.makeText(this@LoginActivity, "You need to log in", Toast.LENGTH_LONG)
+            Toast.makeText(this@LoginActivity, "Please, log in", Toast.LENGTH_LONG)
                 .show()
         }
 

@@ -56,7 +56,7 @@ class MainFragment : Fragment(), CoroutineScope by MainScope() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         movieDao = MovieDatabase.getDatabase(context!!).movieDao()
         sessionId = Singleton.getSession()
         accountId = Singleton.getAccountId()
@@ -142,8 +142,7 @@ class MainFragment : Fragment(), CoroutineScope by MainScope() {
     private fun getMovieCoroutine() {
         launch {
             swipeRefreshLayout.isRefreshing = true
-            val list = withContext(Dispatchers.IO)
-            {
+            val list = withContext(Dispatchers.IO) {
                 try {
                     val response = RetrofitService.getPostApi()
                         .getPopularMovieListCoroutine(BuildConfig.THE_MOVIE_DB_API_TOKEN)

@@ -13,8 +13,8 @@ abstract class MovieDatabase : RoomDatabase() {
     abstract fun movieDao(): MovieDao
 
     companion object {
-        var INSTANCE: MovieDatabase? = null
-        val MIGRATION_1_2: Migration = object : Migration(1, 2) {
+        private var INSTANCE: MovieDatabase? = null
+        private val MIGRATION_1_2: Migration = object : Migration(1, 2) {
             override fun migrate(database: SupportSQLiteDatabase) {
                 database.execSQL("ALTER TABLE movies_table ADD COLUMN liked int DEFAULT 0")
             }
