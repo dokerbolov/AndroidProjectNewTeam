@@ -5,7 +5,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import androidx.viewpager.widget.ViewPager
 
-class LockableViewPager  : ViewPager {
+class LockableViewPager : ViewPager {
     private var swipable = false
 
     constructor(context: Context?) : super(context!!)

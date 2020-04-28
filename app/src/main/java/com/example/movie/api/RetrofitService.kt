@@ -1,11 +1,10 @@
 package com.example.movie.api
 
-import com.example.movie.model.Genre
 import com.example.movie.model.MovieResponse
 import com.google.gson.JsonObject
 import retrofit2.Call
-import retrofit2.Response
 import retrofit2.Retrofit
+import retrofit2.Response
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 
@@ -23,18 +22,6 @@ object RetrofitService {
 }
 
 interface PostApi {
-
-    @GET("movie/popular")
-    fun getPopularMovieList(@Query("api_key") apiKey: String): Call<MovieResponse>
-
-    @GET("authentication/token/new")
-    fun getRequestToken(@Query("api_key") apiKey: String): Call<RequestToken>
-
-    @POST("authentication/token/validate_with_login")
-    fun login(@Query("api_key") apiKey: String, @Body body: JsonObject): Call<JsonObject>
-
-    @POST("authentication/session/new")
-    fun getSession(@Query("api_key") apiKey: String, @Body body: JsonObject): Call<JsonObject>
 
     @GET("movie/{movie_id}/account_states")
     suspend fun hasLikeCoroutine(
@@ -101,11 +88,5 @@ interface PostApi {
     ): Call<JsonObject>
 
     @DELETE("authentication/session")
-    fun deleteSession(@Query("api_key") apiKey: String, @Body body: JsonObject): Call<JsonObject>
-
-    @DELETE("authentication/session")
     suspend fun deleteSessionCoroutine(@Query("api_key") apiKey: String, @Body body: JsonObject): Response<JsonObject>
-
-    @GET("genre/movie/list")
-    fun getGenres(@Query("api_key") apiKey: String): Call<List<Genre>>
 }
