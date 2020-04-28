@@ -14,6 +14,8 @@ import com.example.movie.api.Session
 import com.example.movie.model.MyAccount
 import com.example.movie.model.Singleton
 import com.example.movie.model.User
+import com.example.movie.view.MainActivity
+import com.example.movie.view.RegistrationActivity
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 import com.google.gson.reflect.TypeToken

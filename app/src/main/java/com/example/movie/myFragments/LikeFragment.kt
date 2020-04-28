@@ -1,4 +1,3 @@
-
 package com.example.movie.myFragments
 
 import android.content.Context
@@ -42,11 +41,7 @@ class LikeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-<<<<<<< HEAD
         // Inflate the layout for this fragment
-=======
-        movieDao = MovieDatabase.getDatabase(context!!).movieDao()
->>>>>>> 6f812c2f539e604269d7a97f30d75326d1452f42
         rootView = inflater.inflate(R.layout.activity_main, container, false) as ViewGroup
         bindView()
         val viewModelProviderFactory = ViewModelProviderFactory(context = this.activity as Context)
@@ -111,31 +106,7 @@ class LikeFragment : Fragment() {
                     swipeRefreshLayout.isRefreshing = true
 
                 }
-<<<<<<< HEAD
                 is LikeListViewModel.State.HideLoading -> {
-=======
-            }
-
-            val unLikesOffline = movieDao?.getLikedOffline(10)
-            if (unLikesOffline != null) {
-                for (i in unLikesOffline) {
-                    val body = JsonObject().apply {
-                        addProperty("media_type", "movie")
-                        addProperty("media_id", i)
-                        addProperty("favorite", false)
-                    }
-                    try {
-                        val response = RetrofitService.getPostApi()
-                            .rateCoroutine(
-                                accountId,
-                                BuildConfig.THE_MOVIE_DB_API_TOKEN,
-                                sessionId,
-                                body
-                            )
-                    } catch (e: Exception) {
-
-                    }
->>>>>>> 6f812c2f539e604269d7a97f30d75326d1452f42
                 }
                 is LikeListViewModel.State.Result -> {
                     postAdapter?.moviesList = result.list

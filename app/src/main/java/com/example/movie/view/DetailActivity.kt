@@ -1,3 +1,4 @@
+
 package com.example.movie.view
 
 import android.graphics.drawable.Drawable
@@ -143,41 +144,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun likeMovie(favourite: Boolean) {
-<<<<<<< HEAD:app/src/main/java/com/example/movie/view/DetailActivity.kt
         detailViewModel.likeMovie(favourite, movie, movieId)
-=======
-        launch {
-
-            val body = JsonObject().apply {
-                addProperty("media_type", "movie")
-                addProperty("media_id", movieId)
-                addProperty("favorite", favourite)
-            }
-            try {
-                RetrofitService.getPostApi()
-                    .rateCoroutine(accountId, BuildConfig.THE_MOVIE_DB_API_TOKEN, sessionId, body)
-            } catch (e: Exception) {
-
-            }
-            if (favourite) {
-                movie?.liked = 11
-                movieDao?.insert(movie)
-                Toast.makeText(
-                    this@DetailActivity,
-                    "Movie has been added to favourites",
-                    Toast.LENGTH_LONG
-                ).show()
-            } else {
-                movie?.liked = 10
-                movieDao?.insert(movie)
-                Toast.makeText(
-                    this@DetailActivity,
-                    "Movie has been removed from favourites",
-                    Toast.LENGTH_LONG
-                ).show()
-            }
-        }
->>>>>>> 6f812c2f539e604269d7a97f30d75326d1452f42:app/src/main/java/com/example/movie/DetailActivity.kt
     }
 
     private fun initCollapsingToolbar() {

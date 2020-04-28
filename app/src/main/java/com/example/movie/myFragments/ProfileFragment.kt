@@ -28,13 +28,6 @@ class ProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-<<<<<<< HEAD
-        val viewModelProviderFactory = ViewModelProviderFactory(context = this.activity as Context)
-        profileListViewModel =
-            ViewModelProvider(this, viewModelProviderFactory).get(ProfileViewModel::class.java)
-=======
-
->>>>>>> 6f812c2f539e604269d7a97f30d75326d1452f42
         val rootView = inflater.inflate(R.layout.activity_profile, container, false) as ViewGroup
         preferences = context?.getSharedPreferences("Username", 0) as SharedPreferences
         bindView(rootView)
