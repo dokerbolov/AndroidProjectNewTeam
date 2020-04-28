@@ -14,7 +14,7 @@ import com.example.movie.R
 import com.example.movie.model.Movie
 
 class LikeMoviesAdapter(
-    var context: Context,
+    private var context: Context,
     var moviesList: List<Movie>? = null
 ) : RecyclerView.Adapter<LikeMoviesAdapter.LikeMovieViewHolder>() {
 

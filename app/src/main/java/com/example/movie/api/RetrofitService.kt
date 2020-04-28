@@ -10,7 +10,7 @@ import retrofit2.http.*
 
 object RetrofitService {
 
-    const val BASE_URL = "https://api.themoviedb.org/3/"
+    private const val BASE_URL = "https://api.themoviedb.org/3/"
 
     fun getPostApi(): PostApi {
         val retrofit = Retrofit.Builder()

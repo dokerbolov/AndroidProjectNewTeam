@@ -39,6 +39,6 @@ data class Movie(
 ) : Serializable {
 
     fun getPosterPath(): String {
-        return "https://image.tmdb.org/t/p/w500" + poster_path
+        return "https://image.tmdb.org/t/p/w500$poster_path"
     }
 }

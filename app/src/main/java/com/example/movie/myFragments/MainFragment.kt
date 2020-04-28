@@ -51,7 +51,14 @@ class MainFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+<<<<<<< HEAD
         // Inflate the layout for this fragment
+=======
+
+        movieDao = MovieDatabase.getDatabase(context!!).movieDao()
+        sessionId = Singleton.getSession()
+        accountId = Singleton.getAccountId()
+>>>>>>> 6f812c2f539e604269d7a97f30d75326d1452f42
         rootView = inflater.inflate(R.layout.activity_main, container, false) as ViewGroup
         bindViews()
         viewModelProvider()
@@ -133,6 +140,7 @@ class MainFragment : Fragment() {
 
     }
 
+<<<<<<< HEAD
     private fun bigPicCard() {
         movie = newMovieList?.get(0)
         dateTv?.text = "март 30, 2020"
@@ -142,6 +150,37 @@ class MainFragment : Fragment() {
         context?.let {
             Glide.with(it)
                 .load(movie?.getPosterPath())
+=======
+    private fun getMovieCoroutine() {
+        launch {
+            swipeRefreshLayout.isRefreshing = true
+            val list = withContext(Dispatchers.IO) {
+                try {
+                    val response = RetrofitService.getPostApi()
+                        .getPopularMovieListCoroutine(BuildConfig.THE_MOVIE_DB_API_TOKEN)
+                    if (response.isSuccessful) {
+                        val result = response.body()?.results
+
+                        if (!result.isNullOrEmpty()) {
+                            movieDao?.insertAll(result)
+                        }
+                        result
+                    } else {
+                        movieDao?.getAll() ?: emptyList()
+                    }
+
+                } catch (e: Exception) {
+                    movieDao?.getAll() ?: emptyList()
+                }
+            }
+            movie = list!!.first()
+            dateTv?.text = "март 30, 2020"
+            commentsTv?.text = "0"
+            bigPictv?.text = movie.original_title
+            bigPicCardIm?.visibility = View.VISIBLE
+            Glide.with(rootView!!.context)
+                .load(movie.getPosterPath())
+>>>>>>> 6f812c2f539e604269d7a97f30d75326d1452f42
                 .into((rootView as ViewGroup).findViewById(R.id.main_big_pic))
         }
         commentsIc.visibility = View.VISIBLE
