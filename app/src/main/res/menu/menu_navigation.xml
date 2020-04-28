@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="Лента"
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:id="@+id/catygory"
+        android:title="Категории"
+        android:icon="@drawable/ic_storage"/>
+    <item
+        android:id="@+id/like_posts"
+        android:title="Закладки"
+        android:icon="@drawable/ic_favorite"/>
+
+    <item
+        android:id="@+id/about"
+        android:title="Профиль"
+        android:icon="@drawable/ic_perm"/>
+
+</menu>
