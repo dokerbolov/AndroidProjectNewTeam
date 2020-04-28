@@ -49,7 +49,6 @@ class LikeFragment : Fragment(), CoroutineScope {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         movieDao = MovieDatabase.getDatabase(context!!).movieDao()
         rootView = inflater.inflate(R.layout.activity_main, container, false) as ViewGroup
         bindView()
@@ -131,6 +130,7 @@ class LikeFragment : Fragment(), CoroutineScope {
                                 body
                             )
                     } catch (e: Exception) {
+
                     }
                 }
             }

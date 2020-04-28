@@ -56,7 +56,6 @@ class MainActivity : AppCompatActivity() {
     private fun bindView() {
         pager = findViewById(R.id.pager)
         bottomNavigationView = findViewById(R.id.bottom_navigation)
-
     }
 
 }
