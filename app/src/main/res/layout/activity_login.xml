@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity"
+    android:orientation="vertical"
+    android:background = "#ffffff">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="#1D0019"
+        android:id="@+id/bgHeader">
+    </View>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="4dp"
+        android:layout_gravity="center"
+        android:background = "#ffffff"
+        android:layout_below="@+id/bgHeader"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="-50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:background = "#ffffff"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="29dp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:layout_marginTop="20dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="ЛОГИН" />
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:hint="Email"
+                android:inputType="textEmailAddress" />
+
+<!--            <EditText-->
+<!--                android:id="@+id/password"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Пароль"-->
+<!--                android:layout_marginTop="20dp"-->
+
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:inputType="textPassword" />-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:passwordToggleEnabled="true">
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Пароль"
+                    android:layout_marginTop="20dp"
+                    android:inputType="textPassword"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Забыли пароль?"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="200dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#000000"
+                />
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:layout_marginTop="20dp"
+
+
+                android:background="#4AAFFF"
+                android:text="Логин"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textStyle="bold"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="У меня нет аккаунта?"
+                    />
+                <Button
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/register"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Регистрация"
+                    android:background="@null"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
+
+                    />
+
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_margin="20dp"-->
+<!--        android:layout_marginTop="-70dp"-->
+<!--        android:layout_below="@+id/bgHeader"-->
+
+
+<!--        >-->
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginTop="0dp"-->
+<!--            android:background = "#ffffff">-->
+
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="15dp"-->
+<!--                app:cardCornerRadius="4dp">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical"-->
+<!--                    android:paddingBottom="50dp"-->
+<!--                    android:background = "#ffffff"-->
+<!--                   >-->
+
+<!--                    <TextView-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="29dp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:textColor="#000000"-->
+<!--                        android:layout_marginTop="13dp"-->
+<!--                        android:textSize="20sp"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:text="Логин" />-->
+
+<!--                    <EditText-->
+<!--                        android:id="@+id/email"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:layout_marginRight="10dp"-->
+<!--                        android:hint="Email"-->
+<!--                        android:inputType="textEmailAddress" />-->
+
+<!--                    <EditText-->
+<!--                        android:id="@+id/password"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:hint="Пароль"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:layout_marginRight="10dp"-->
+<!--                        android:inputType="textPassword" />-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textStyle="bold"-->
+<!--                        android:text="Забыли пароль?" />-->
+
+<!--                    <Button-->
+<!--                        android:id="@+id/login"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:background="#4AAFFF"-->
+<!--                        android:text="Логин"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:layout_marginRight="10dp"-->
+<!--                        android:textStyle="bold"-->
+<!--                        />-->
+
+<!--                    <Button-->
+<!--                        android:id="@+id/register"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="Регистрация"-->
+<!--                        android:background="#FFFFFF"-->
+<!--                        android:textStyle="bold"-->
+<!--                        />-->
+
+
+<!--                </LinearLayout>-->
+
+<!--            </androidx.cardview.widget.CardView>-->
+
+<!--        </RelativeLayout>-->
+
+
+<!--    </ScrollView>-->
+
+
+
+
+
+
+</RelativeLayout>
