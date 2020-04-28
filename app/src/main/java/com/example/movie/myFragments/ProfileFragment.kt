@@ -32,7 +32,7 @@ class ProfileFragment : Fragment(), CoroutineScope by MainScope() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         val rootView = inflater.inflate(R.layout.activity_profile, container, false) as ViewGroup
         preferences = context?.getSharedPreferences("Username", 0)!!
         bindView(rootView)
