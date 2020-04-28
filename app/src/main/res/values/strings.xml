@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FilmsApplication</string>
+    <string name="app_name">Кино ТВ</string>
     <string name="action_settings">Settings</string>
     <string name="name_movie">Movie Title</string>
     <string name="movie_details">Movie details</string>
@@ -8,6 +8,10 @@
     <string name="release">Release Date</string>
     <string name="main_name">Кино ТВ-Онлайн Фильмы</string>
     <string name="profile_name">Профиль</string>
-
-
+    <string name="empty">Empty email or password</string>
+    <string name="wrong">Something is went wrong</string>
+    <string name="favorite">Закладки</string>
+    <string name="profile">Профиль</string>
+    <string name="fav_add">Movie has been added to favourites</string>
+    <string name="fav_remove">Movie has been added to favourites</string>
 </resources>

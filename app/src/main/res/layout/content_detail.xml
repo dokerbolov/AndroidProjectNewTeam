@@ -7,23 +7,22 @@
     android:layout_height="match_parent"
     android:background="@color/viewBg"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.movie.DetailActivity"
+    tools:context="com.example.movie.view.DetailActivity"
     tools:showIn="@layout/activity_detail">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:overScrollMode="never"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-        >
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="20dp"
-            android:background="#ffffff">
+            android:background="#ffffff"
+            android:orientation="vertical">
 
 
             <TextView
@@ -33,20 +32,21 @@
                 android:layout_below="@+id/movieTitle"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
-                android:textColor="#000000"
                 android:paddingEnd="10dp"
-                android:textStyle="bold"
-                android:textSize="22sp" />
+                android:textColor="#000000"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
             <TextView
                 android:id="@+id/genre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/plot"
                 android:layout_marginLeft="20dp"
-                android:layout_marginBottom="5dp"
                 android:layout_marginTop="5dp"
-                android:text="Экшен"
+                android:layout_marginBottom="5dp"
                 android:background="#0B83F7"
+                android:text="Экшен"
                 android:textColor="#ffffff"
                 android:textSize="15dp" />
 
@@ -63,10 +63,10 @@
                 android:textStyle="bold" />
 
             <LinearLayout
+                android:id="@+id/date_ly_on"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
-                android:layout_marginLeft="20dp"
-                android:id="@+id/date_ly_on">
+                android:layout_marginLeft="20dp">
 
                 <TextView
                     android:id="@+id/date_movie_info"
@@ -107,8 +107,8 @@
                 android:layout_below="@+id/plot"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
-                android:textColor="#000000"
                 android:text="@string/rating"
+                android:textColor="#000000"
                 android:textSize="14dp" />
 
             <TextView
@@ -119,8 +119,9 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:text="@string/rating"
-                android:textSize="15dp"
-                android:textColor="#000000"/>
+                android:textColor="#000000"
+                android:textSize="15dp" />
+
             <TextView
                 android:id="@+id/commit_edit"
                 android:layout_width="match_parent"
@@ -129,11 +130,10 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="8dp"
-                android:textAlignment="center"
                 android:text="Читать комментарий"
-                android:textSize="15dp"
-                android:textColor="#000000"/>
-
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="15dp" />
 
 
         </LinearLayout>
